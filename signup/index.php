@@ -41,6 +41,8 @@ if ($_SESSION['auth_status'] == "allowed") {
 					empty($last_name)||
 					empty($password) ||
 					empty($birthdate) ||
+					($gender == "-- select --") ||
+					($course == "-- select --") ||
 					empty($email) ||
 					empty($password) ||
 					empty($confirm_password)
@@ -77,7 +79,7 @@ if ($_SESSION['auth_status'] == "allowed") {
 								echo "<script type='text/javascript'>alert('Account successfully created!'); </script>";
 								header("location: ../login"	);   
 							} else {
-								die('SQL Error occured ):');		
+								die('SQL Error occured ): ' . $sql_register -> error);
 							}
 
 							$sql_register -> close();
@@ -85,7 +87,7 @@ if ($_SESSION['auth_status'] == "allowed") {
 
 						$sql_check -> close();
 					} else {
-						die('SQL Error occured ):');
+						die('SQL Error occured ): ' . $sql_register -> error);
 					}
 					$conn -> close();
 				}
@@ -177,7 +179,7 @@ if ($_SESSION['auth_status'] == "allowed") {
 								<option value="BS Industrial Enginnering">BS Industrial Enginnering</option>
 								<option value="BS Electrical Enginnering">BS Electrical Enginnering</option>
 								<option value="BS Mechanical Enginnering">BS Mechanical Enginnering</option>
-								<option value="Master in Buisness Administration">Master in Buisness Administration</option>
+								<option value="Master in Business Administration">Master in Buisness Administration</option>
 								<option value="MS Criminology">MS Criminology</option>
 								<option value="MS Psychology">MS Psychology</option>
 							</select></td>
