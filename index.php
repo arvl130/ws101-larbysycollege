@@ -6,23 +6,18 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-
-	<title>Home | Larby Sy School</title>
-	<link rel="icon" href="image/school-logo2.png">
-	<link rel="stylesheet" type="text/css" href="style/fonts.css">
-	<link rel="stylesheet" type="text/css" href="fontawesome-free-5.15.1-web/css/all.css">
-	<link rel="stylesheet" type="text/css" href="style/style.css">
-	<link rel="stylesheet" type="text/css" href="style/media.css">
-
+	<?php
+		// Page global resources
+		require('globals/resources.html');
+	?>
 </head>
-<script src="script/script.js"></script>
 
 <body>
-	
+
 <!-- ---------------------------------------------START---Dropdown HTML-------------------------------------- -->
 
 <div id="drop-bar" class="drop-bar">
-	<img class="dropdown-logo" src="image/school-logo2.png"> 
+	<img class="dropdown-logo" src="res/school-logo2.png"> 
 	<div class="dropbar-list">
 			<ul>
 				<li><a href="index.php">Home<hr></a></li>
@@ -94,7 +89,7 @@ session_start();
 
 
 <div id="upper-bar" class="upper-bar">
-	<img class="nav-logo" src="image/school-logo2.png"> 
+	<img class="nav-logo" src="res/school-logo2.png"> 
 	<h2 class="school-name">Larby Sy College</h2>
 </div>
 <div id="lower-bar" class="lower-bar">
@@ -135,7 +130,7 @@ session_start();
 <div class="main-body">
 	
 	<div id="upper-main" class="upper-main">
-		<img class="main-logo" src="image/school-logo2.png">
+		<img class="main-logo" src="res/school-logo2.png">
 		
 		<h1 class="main-name">Larby Sy College</h1>
 		<h4>Beacon of Knowledge</h4>
