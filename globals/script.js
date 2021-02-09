@@ -63,36 +63,39 @@ function myscroll()
 		document.getElementById("drop-bar").style.top="-80px";
 	}
 
-	if (document.documentElement.scrollTop > 480) 
-	{
-		document.getElementById("sec1").style.paddingLeft="0px";
-		document.getElementById("sec1").style.opacity="1";
+	if (document.getElementById("sec1")) {
+		if (document.documentElement.scrollTop > 480) 
+		{
+			document.getElementById("sec1").style.paddingLeft="0px";
+			document.getElementById("sec1").style.opacity="1";
+		}
+		else
+		{
+			document.getElementById("sec1").style.paddingLeft="100px";
+			document.getElementById("sec1").style.opacity="0";
+		}
+		if (document.documentElement.scrollTop > 800) 
+		{
+			document.getElementById("sec2").style.width="100%";
+			document.getElementById("sec2").style.opacity="1";
+		}
+		else
+		{
+			document.getElementById("sec2").style.width="96%";
+			document.getElementById("sec2").style.opacity="0";
+		}
+		if (document.documentElement.scrollTop > 1100) 
+		{
+			document.getElementById("sec3").style.paddingLeft="0";
+			document.getElementById("sec3").style.opacity="1";
+		}
+		else
+		{
+			document.getElementById("sec3").style.paddingLeft="100px";
+			document.getElementById("sec3").style.opacity="0";
+		}
 	}
-	else
-	{
-		document.getElementById("sec1").style.paddingLeft="100px";
-		document.getElementById("sec1").style.opacity="0";
-	}
-	if (document.documentElement.scrollTop > 800) 
-	{
-		document.getElementById("sec2").style.width="100%";
-		document.getElementById("sec2").style.opacity="1";
-	}
-	else
-	{
-		document.getElementById("sec2").style.width="96%";
-		document.getElementById("sec2").style.opacity="0";
-	}
-	if (document.documentElement.scrollTop > 1100) 
-	{
-		document.getElementById("sec3").style.paddingLeft="0";
-		document.getElementById("sec3").style.opacity="1";
-	}
-	else
-	{
-		document.getElementById("sec3").style.paddingLeft="100px";
-		document.getElementById("sec3").style.opacity="0";
-	}
+	
 
 
 
