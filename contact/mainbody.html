@@ -1,0 +1,41 @@
+<div class="contact-main">
+    <h1 style="color: #01213c;">Contact Us</h1>
+        <div class="cont-sub">
+            <div class="cont-left">
+            <h3>Send Message</h3>
+            <hr>
+                <div class="error">
+                <h3><?php if (!empty($error_message)) 
+                {
+                    echo $error_message;
+                } ?>
+                </h3>
+                <h4><?php if (!empty($confirm))
+                 {
+                    echo $confirm;
+                } ?></h4>
+            </div>
+                <form method="POST" action="index.php">
+                <input placeholder="Name" id="name" class="cont-name" type="text" name="name">
+                <input placeholder="E-mail" class="cont-email" type="text" name="email">
+                <textarea placeholder="Message" class="cont-mess" name="body_msg"></textarea>
+                <input type="submit" name="submit" class="cont-submit">
+                </form>
+            </div>
+            <div class="cont-right">
+                    
+    
+    
+            <h4>If you have concerns, kindly message us in facebook</h4>
+                <button class="cont-fb"><img src="../image/icon-fb.png"></button>
+                <hr>
+                <h4>Or</h4>
+                <button class="cont-gmail"><img src="../image/icon-google.png"></i></button>
+                <button class="cont-twitter"><img src="../image/icon-twitter.png"></button>
+                <button class="cont-link"><img src="../image/icon-link.png"></button>
+                
+    
+            </div>
+        </div>
+    
+    </div>
