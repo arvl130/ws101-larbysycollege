@@ -54,14 +54,17 @@ window.onscroll=function(){myscroll()};
 function myscroll()
 {
 	
-	if(document.documentElement.scrollTop > 150)
-	{
-		document.getElementById("drop-bar").style.top="0";
+	if (document.getElementById("drop-bar")) {
+		if(document.documentElement.scrollTop > 150)
+		{
+			document.getElementById("drop-bar").style.top="0";
+		}
+		else
+		{	
+			document.getElementById("drop-bar").style.top="-80px";
+		}		
 	}
-	else
-	{
-		document.getElementById("drop-bar").style.top="-80px";
-	}
+	
 
 	if (document.getElementById("sec1")) {
 		if (document.documentElement.scrollTop > 480) 
