@@ -41,6 +41,8 @@ if(isset($_POST['submit']))
 						header('Location: ../student-profile');
 					}
 				}
+
+				$error = "Wrong password or email!";
 			}
 			else
 			{
@@ -100,11 +102,11 @@ if(isset($_POST['submit']))
 			<table>
 				<tr>
 					<td><label>Email:</label></td>
-					<td><input type="text" name="email" placeholder="*Email" class="log-input"></td>
+					<td><input type="text" name="email" placeholder="* Email" class="log-input"></td>
 				</tr>
 				<tr>
 					<td><label>Password:</label></td>
-					<td><input type="password" name="password" placeholder="*Password" class="log-input"></td>
+					<td><input type="password" name="password" placeholder="* Password" class="log-input"></td>
 				</tr>
 				<tr>
 					<td><input type="submit" value="Log in" name="submit" class="log-submit"></td>
