@@ -187,7 +187,7 @@ if ($_SESSION['auth_status'] == "allowed") {
 							<td><input type="password" name="conpassword" placeholder="*Confirm Password" id="pass2" class="input-name"></td>
 						</tr>
 						<tr>
-							<td><input type="submit" value="submit" name="submit" class="submit1"></td>
+							<td><button type="submit" value="submit" name="submit" class="submit1">Register</button></td>
 							<td><h4>Already Registered? <a href="../login">Log in</a></h4></td>
 						</tr>
 					</table>
