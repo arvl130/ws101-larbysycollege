@@ -1,0 +1,25 @@
+.wrapper
+{
+	display:grid;
+	grid-template-columns: 50% 50%;
+	grid-gap:.5em;
+	
+}
+.box1
+{
+	text-align: justify;
+	padding:  1em;
+	
+}
+.box2
+{
+	
+	text-align: justify;
+	padding: 1em;
+
+	
+}
+.box
+{
+	padding: 1em;
+}
