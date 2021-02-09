@@ -10,15 +10,14 @@ if ($_SESSION['auth_status'] == "allowed") {
 }
 ?>
 
-<?php 
+<?php
 if ($_SERVER['REQUEST_METHOD'] == "POST") 
 {
 	if (isset($_POST['submit'])) 
 	{
-		
 		if(empty($_POST['name'])||empty($_POST['email'])||empty($_POST['body_msg']))
 		{
-				$error_message="fill out all";
+			$error_message="Please fill out all form entries.";
 		}
 		else
 		{

@@ -1,0 +1,13 @@
+.faq-sendmsg-btn {
+    color: #01213c;
+    margin: 1%;
+    margin-left: 4%;
+    float: left;
+    outline: none;
+    border: none;
+    background-color: #01213c;
+    color: white;
+    padding: 2% 5%;
+    font-family: Questrial;
+    font-size: medium;
+}

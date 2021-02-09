@@ -19,6 +19,9 @@ if ($_SESSION['auth_status'] == "allowed") {
 	<?php
 		require('../globals/resources.html');
 	?>
+
+	<!--Page local resources-->
+	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
