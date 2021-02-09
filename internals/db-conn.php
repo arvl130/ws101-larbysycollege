@@ -14,11 +14,6 @@
     if (empty($db_name)) {
         die('No database name specified for website.');
     }
-
-    // Exit immediately when no password is specified.
-    if (empty($db_password)) {
-        die('No database password specified for website.');
-    }    
     
     // Try to launch new connection.
     $conn = new mysqli($db_host, $db_user, $db_password, $db_name);
