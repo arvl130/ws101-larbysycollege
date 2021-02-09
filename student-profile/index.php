@@ -43,7 +43,7 @@ $logout_visibility = "visible";
 				<table>
 					<tr>
 						<td>Student Name :</td>
-						<td><?php echo $_SESSION['firstname']." ".$_SESSION['lastname']; ?></td>
+						<td><?php echo $_SESSION['firstname'] . " " . $_SESSION['midname'] . " " . $_SESSION['lastname']; ?></td>
 					</tr>
 					<tr>
 						<td>Birthday :</td>

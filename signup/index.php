@@ -28,6 +28,7 @@ if ($_SESSION['auth_status'] == "allowed") {
 			if(isset($_POST['submit']))
 			{
 				$first_name = $_POST['firstname'];
+				$mid_name = $_POST['midname'];
 				$last_name = $_POST['lastname'];
 				$birthdate = $_POST['date'];
 				$gender=$_POST['gender'];
@@ -68,9 +69,9 @@ if ($_SESSION['auth_status'] == "allowed") {
 						} else {
 							$hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-							$sql_register_cmd = "INSERT INTO login(firstname, lastname, birthday, gender, course, email, password) VALUES (?, ?, ?, ?, ?, ?, ?)";
+							$sql_register_cmd = "INSERT INTO login(firstname, midname, lastname, birthday, gender, course, email, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 							$sql_register = $conn -> prepare($sql_register_cmd);
-							$sql_register -> bind_param("sssssss", $first_name, $last_name, $birthdate, $gender, $course, $email, $hashed_password);
+							$sql_register -> bind_param("ssssssss", $first_name, $mid_name, $last_name, $birthdate, $gender, $course, $email, $hashed_password);
 							
 							if($sql_register -> execute()) {
 								echo "<script type='text/javascript'>alert('Account successfully created!'); </script>";
@@ -141,27 +142,31 @@ if ($_SESSION['auth_status'] == "allowed") {
 					<table>
 						<tr>
 							<td><label>First Name :</label></td>
-							<td><input type="text" name="firstname" placeholder="*First Name" class="input-name"></td>
+							<td><input type="text" name="firstname" placeholder="* First Name" class="input-name"></td>
+						</tr>
+						<tr>
+							<td><label>Middle Name :</label> </td>
+							<td><input type="text" name="midname" placeholder="* Middle Name" class="input-name"></td>
 						</tr>
 						<tr>
 							<td><label>Last Name :</label> </td>
-							<td><input type="text" name="lastname" placeholder="*Last Name" class="input-name"></td>
+							<td><input type="text" name="lastname" placeholder="* Last Name" class="input-name"></td>
 						</tr>
 						<tr>
 							<td><label>Birthday :</label> </td>
-							<td><input type="date" name="date" placeholder="*Date" class="input-name"></td>
+							<td><input type="date" name="date" placeholder="* Date" class="input-name"></td>
 						</tr>
 						<tr>
 							<td><label>Gender :</label> </td>
 							<td><select name="gender">
-								<option >--select--</option>
+								<option >-- select --</option>
 								<option value="Male">Male</option>
 								<option value="Female">Female</option></select></td>
 						</tr>
 						<tr>
 							<td><label>Course :</label> </td>
 							<td><select name="course">
-								<option >--select--</option>
+								<option >-- select --</option>
 								<option value="BS Psychology">BS Psychology</option>
 								<option value="BS Information Technology">BS Information Technology</option>
 								<option value="BS Computer Science">BS Computer Science</option>
@@ -179,15 +184,15 @@ if ($_SESSION['auth_status'] == "allowed") {
 						</tr>
 						<tr>
 							<td><label>Email :</label></td>
-							<td><input type="text" name="email" placeholder="*Email" class="input-name"></td>
+							<td><input type="text" name="email" placeholder="* Email" class="input-name"></td>
 						</tr>
 						<tr>
 							<td><label>Password :</label></td>
-							<td><input type="password" name="password" placeholder="*Password" id="pass1" class="input-name"></td>
+							<td><input type="password" name="password" placeholder="* Password" id="pass1" class="input-name"></td>
 						</tr>
 						<tr>
 							<td><label>Confirm Password :</label></td>
-							<td><input type="password" name="conpassword" placeholder="*Confirm Password" id="pass2" class="input-name"></td>
+							<td><input type="password" name="conpassword" placeholder="* Confirm Password" id="pass2" class="input-name"></td>
 						</tr>
 						<tr>
 							<td><button type="submit" value="submit" name="submit" class="submit1">Register</button></td>

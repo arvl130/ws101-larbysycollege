@@ -32,6 +32,7 @@ if(isset($_POST['submit']))
 						$_SESSION['auth_status'] = "allowed";
 
 						$_SESSION['firstname'] = $row['firstname'];
+						$_SESSION['midname'] = $row['midname'];
 						$_SESSION['lastname'] = $row['lastname'];
 						$_SESSION['bday'] = $row['birthday'];
 						$_SESSION['gender'] = $row['gender'];
