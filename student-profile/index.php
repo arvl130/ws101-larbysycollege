@@ -120,8 +120,9 @@ $logout_visibility = "visible";
 		
 	</div>
 
-	<footer class="foot">
-		<h5>&#169; Copyright 2020 Larby Sy College</h5>
-	</footer>
+	<?php
+		// Footer
+		include('../globals/footer.html');
+	?>
 </body>
 </html>
