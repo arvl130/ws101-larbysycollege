@@ -3,6 +3,9 @@ session_start();
 
 if ($_SESSION['auth_status'] == "allowed") {
 	header('Location: /');
+} else {
+	$login_visibility = "visible";
+	$logout_visibility = "hidden";
 }
 ?>
 
@@ -188,7 +191,7 @@ if ($_SESSION['auth_status'] == "allowed") {
 						</tr>
 						<tr>
 							<td><button type="submit" value="submit" name="submit" class="submit1">Register</button></td>
-							<td><h4>Already Registered? <a href="../login">Log in</a></h4></td>
+							<td><h4>Already Registered? <a href="/login">Log in</a></h4></td>
 						</tr>
 					</table>
 				</form>
