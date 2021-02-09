@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if ($_SESSION['auth_status'] == "allowed") {
+	header('Location: /');
+}
+?>
+
 <?php 
 
 session_start();
@@ -21,6 +29,8 @@ if(isset($_POST['submit']))
 			{
 				while ($row = $result -> fetch_assoc()) {
 					if (password_verify($password, $row["password"])) {
+						$_SESSION['auth_status'] = "allowed";
+
 						$_SESSION['firstname'] = $row['firstname'];
 						$_SESSION['lastname'] = $row['lastname'];
 						$_SESSION['bday'] = $row['birthday'];
@@ -35,16 +45,17 @@ if(isset($_POST['submit']))
 			else
 			{
 				$error = "Wrong password or email!";
-				die($error);
 			}
-		}
-		else
-		{	
-			$error = "Password and Email required!";
+		} else {
+			$error = "Internal error! Please contact administrator";
 		}
 
 		$sql -> close();
 		$conn -> close();
+	}
+	else
+	{	
+		$error = "Email and password required!";
 	}
 }
 ?>
@@ -60,10 +71,24 @@ if(isset($_POST['submit']))
 	?>
 </head>
 <body>
-	<div id="upper-bar" class="upper-bar">
-		<img class="nav-logo" src="/res/school-logo2.png">
-		<h2 class="school-name">Larby Sy College</h2>
-	</div>
+	<?php
+		if ($_SESSION['auth_status'] == "allowed") {
+			$login_visibility = "hidden";
+			$logout_visibility = "visible";
+		} else {
+			$login_visibility = "visible";
+			$logout_visibility = "hidden";
+		}
+
+		// Navbar drop-down animations
+		include('../globals/navbar/dropdown.html');
+
+		// Navbar login popup
+		include('../globals/navbar/login-popup.html');
+
+		// Navbar
+		include('../globals/navbar/navbar.html');
+	?>
 
 	<div class="main-login" >
 		<div class="sub-login">

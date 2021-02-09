@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if ($_SESSION['auth_status'] == "allowed") {
+	header('Location: /');
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>

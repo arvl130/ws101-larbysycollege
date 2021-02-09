@@ -1767,7 +1767,7 @@ border: 1px solid gray;
 }
 .log-submit
 {
-	width: 100px;
+	width: 120px;
 	height: 30px;
 	border: 1px solid transparent;
 	background-color: #01213c;
@@ -1775,7 +1775,7 @@ border: 1px solid gray;
 	border-radius: 10px;
 	cursor: pointer;
 	transition: 0.5s;
-
+	font-size: medium;
 }
 .log-submit:hover
 {
@@ -1914,3 +1914,37 @@ width: 70%;
 	font-size: 20px;
 }
 
+.login-btn {
+	display: inline-block;
+}
+
+.login-btn.visible {
+	display: inline-block;
+}
+
+.login-btn.hidden {
+	display: none;
+}
+
+.logout-btn {
+	display: inline-block;
+	font-family: Questrial;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	background-color: Transparent;
+	font-size: medium;
+	padding: 0;
+}
+
+.logout-btn.visible {
+	display: inline-block;
+}
+
+.logout-btn.hidden {
+	display: none;
+}
+
+.logout-btn:hover {
+	text-decoration: underline;
+}

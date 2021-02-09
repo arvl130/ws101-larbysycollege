@@ -1,5 +1,11 @@
 <?php 
 session_start();
+
+if ($_SESSION['auth_status'] != "allowed")
+	header('Location: /');
+
+$login_visibility = "hidden";
+$logout_visibility = "visible";
 ?>
 
 <!DOCTYPE html>
@@ -17,13 +23,18 @@ session_start();
 </head>
 
 <body>
-	<div class="upper-bar">
-		<img class="nav-logo" src="/res/school-logo2.png"> 
-		<h2 class="school-name">Larby Sy College</h2>
-	</div>
+	<?php
+		// Navbar drop-down animations
+		include('../globals/navbar/dropdown.html');
+
+		// Navbar login popup
+		include('../globals/navbar/login-popup.html');
+
+		// Navbar
+		include('../globals/navbar/navbar.html');
+	?>
 
 	<div class="stud-main">
-		<a href="../index.php">Logout</a>
 		<div stud-sub>
 			<section onclick="show1();" class="sections ">
 				<h3 class="s1">Student Profile <i class="fas fa-chevron-right"></i></h3>

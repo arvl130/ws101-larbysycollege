@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+if ($_SESSION['auth_status'] == "allowed") {
+	$login_visibility = "hidden";
+	$logout_visibility = "visible";
+} else {
+	$login_visibility = "visible";
+	$logout_visibility = "hidden";
+}
+?>
 
 <?php 
 if ($_SERVER['REQUEST_METHOD'] == "POST") 

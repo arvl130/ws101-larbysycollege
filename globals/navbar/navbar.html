@@ -23,7 +23,12 @@
 	<div class="lower-bar-right">
 		 <ul>
 		 	<li><a id="swtc6" href="/faq/">FAQ's<hr></a></li>
-		 	<li><a id="swtc7" onclick="popup();" href="#">Sign in<hr></a></li>
+			<li><a class="login-btn <?php echo $login_visibility; ?>" id="swtc7" onclick="popup();" href="#">Sign in<hr></a></li>
+			<li>
+				<form method="post" action="/internals/logout.php">
+					<button class="logout-btn <?php echo $logout_visibility; ?>" type="submit" name="action" value="logout">Logout</button>
+				</form>
+			</li> 
 		 </ul>
 	</div>
 </div>
