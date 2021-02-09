@@ -12,41 +12,32 @@ if ($_SESSION['auth_status'] == "allowed") {
 
 <?php 
 if ($_SERVER['REQUEST_METHOD'] == "POST") 
-    {
-
-if (isset($_POST['submit'])) 
 {
-	
-	if(empty($_POST['name'])||empty($_POST['email'])||empty($_POST['body_msg']))
-        {
-            $error_message="fill out all";
-        }
-        else
-        {
-        	$conn = new mysqli('localhost', 'root', '', 'student_data');
-        	
-        	$sql = $conn -> prepare("INSERT INTO message_db(name,email,message) VALUES ( ?, ?, ?)");
-        	$name=$_POST['name'];
-			$email=$_POST['email'];
-			$message=$_POST['body_msg'];
+	if (isset($_POST['submit'])) 
+	{
+		
+		if(empty($_POST['name'])||empty($_POST['email'])||empty($_POST['body_msg']))
+		{
+				$error_message="fill out all";
+		}
+		else
+		{
+			require_once('../internals/db-conn.php');
+			$sql_cmd = "INSERT INTO message_db(name, email,message) VALUES ( ?, ?, ?)";
+			$sql = $conn -> prepare($sql_cmd);
+			$name = $_POST['name'];
+			$email = $_POST['email'];
+			$message = $_POST['body_msg'];
 
 			$sql -> bind_param("sss", $name, $email, $message);
-
-
 			if($sql -> execute())
-             {	 
-             	
-                 $confirm="Message Sent!";
-             }
-        }
+			{	 
+				$confirm="Message Sent!";
+			}
+		}
+	}
 }
-
-
-
-}
-
-
- ?>
+?>
 
 
 
