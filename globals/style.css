@@ -168,6 +168,8 @@ body
 	background-color: #01213c;
 	color: #bf9751;
 	transition: 0.5s;
+	font-size: medium;
+	font-weight: bolder;
 }
 .upper-main button:hover
 {
