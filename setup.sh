@@ -32,8 +32,8 @@ deploy_project() {
         return 1
     }
 
-    cd "$(dirname $(basename $0))"
-    rsync -aAXv --exclude "$0" * "$1"
+    cd "$(dirname "$(basename "$0")")"
+    rsync -aAXv --exclude "$(basename "$0")" --exclude README.md -- * "$1"
 }
 
 main() {
