@@ -18,7 +18,7 @@ exists_in_path() {
 }
 
 run_project() {
-    php -S localhost:"${PORT:-8000}"
+    DB_NAME="${DB_NAME:-school_db}" php -S localhost:"${PORT:-8000}"
 }
 
 deploy_project() {
