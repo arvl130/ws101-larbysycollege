@@ -1,4 +1,4 @@
-# 🍋 Larby Sy College School Website 📖
+# 📖 Larby Sy College School Website 📖
 
 This is a finals project for WS101 on building a school website for a taget company.
 
